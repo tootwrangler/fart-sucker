@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating farts table
+      author: alcox
+      changes:
+        - createTable:
+            tableName: farts
+            columns:
+              - column:
+                  name: guid
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: fart
+                  type: varchar(2048)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: creating users table
+      author: alcox
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: guid
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: creating s3links table
+      author: alcox
+      changes:
+        - createTable:
+            tableName: s3links
+            columns:
+              - column:
+                  name: guid
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: url
+                  type: varchar(256)
+                  constraints:
+                    nullable: false
